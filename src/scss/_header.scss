@@ -1,0 +1,46 @@
+$bg-color: #272727;
+$hc: burlywood;
+$main-color: #fff;
+
+.container__header {
+  background-color: $bg-color;
+  width: 100vw;
+  height: 120px;
+  margin-bottom: 50px;
+}
+
+.header__logo {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  background-image: url(../images/Magnit.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 48px;
+  width: 48px;
+}
+
+.header__name {
+  padding-left: 10%;
+  padding-top: 48px;
+  font-size: 24px;
+  color: $hc;
+}
+
+.sitevizit {
+  position: absolute;
+  right: 5%;
+  top: 54px;
+  color: $main-color;
+}
+
+.sitelink {
+  color: $main-color;
+  text-decoration: none;
+  font-size: 18px;
+
+  &:hover {
+    color: $hc;
+  }
+}

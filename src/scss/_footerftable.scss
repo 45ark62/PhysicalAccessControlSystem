@@ -1,0 +1,86 @@
+$bg-color: #272727;
+$hc: burlywood;
+$main-color: #fff;
+
+.footer {
+  background-color: $bg-color;
+  height: 120px;
+}
+
+.container__footer {
+  margin-top: -120px;
+  width: 100vw;
+  height: 120px;
+}
+
+.container__footer-flex {
+  display: flex;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.container__logo-flex {
+  display: flex;
+}
+
+.footer__logo {
+  padding-left: 40%;
+  padding-top: 36px;
+  width: 48px;
+  height: 48px;
+}
+
+.footer__name {
+  padding-top: 48px;
+  padding-left: 25px;
+  color: $hc;
+  font-size: 24px;
+}
+
+.container__socialnetwork {
+  padding-right: 100px;
+  margin-top: 40px;
+  display: flex;
+}
+
+.oursocialnetwork {
+  text-decoration: none;
+  display: flex;
+}
+
+.inst {
+  height: 40px;
+  width: 40px;
+  background-image: url("../images/instagram.png");
+  background-size: cover;
+}
+
+.vk {
+  height: 40px;
+  width: 40px;
+  background-image: url("../images/vk.png");
+  background-size: cover;
+}
+
+.DeviceFilter {
+  margin-left: 30px;
+  width: 200px;
+  height: 40px;
+  border-radius: 10px;
+  border: 3px solid burlywood;
+  background-color: #e6e6fa;
+  font-size: 16px;
+  cursor: pointer;
+  appearance: none;
+  outline: 0;
+  margin-bottom: 20px;
+}
+.optionDevice {
+  display: flex;
+  border-radius: 50px;
+  padding-left: 10px;
+  font-size: 16px;
+}
+option:hover {
+  background-color: burlywood;
+}
