@@ -1,6 +1,6 @@
 import React from "react";
 import RowDevice from "./RowDevice";
-const TableDevices = ({ devicesL }) => {
+const TableDevices = ({ devicesL, deleteDeviceItem }) => {
   return (
     <>
       {devicesL.map((deviceItem) => (
@@ -9,6 +9,7 @@ const TableDevices = ({ devicesL }) => {
           Type={deviceItem.DeviceType}
           Description={deviceItem.Description}
           Status={deviceItem.Status}
+          DeleteDevice={deleteDeviceItem}
         />
       ))}
     </>

@@ -8,6 +8,7 @@ const Table = ({ historyList }) => {
         <Card
           id={item.id}
           personId={item.ForeignPerson}
+          FIO={item.FIO}
           deviceId={item.ForeignDevice}
           Data={item.DateTime}
           AccessLockType={item.AccessLockType}

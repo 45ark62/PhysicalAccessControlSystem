@@ -4,9 +4,10 @@ import { Link } from "react-router-dom";
 import TableD from "../component/TableDevices";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import AddDevice from "../component/AddDevice";
 const Devices = () => {
   const [devicesList, setDevList] = useState([]); //массив объектов устройств
-
+  const [showAddDevice, setShowAddDevice] = useState(false); // для скрытия и показа формы добавления устройства
   const Api = "http://127.0.0.1:8000/api";
   async function fetchHistory() {
     try {
@@ -28,7 +29,37 @@ const Devices = () => {
   useEffect(() => {
     fetchHistory();
   }, []); // Пустой массив зависимостей означает, что эффект будет запущен только при монтировании
+  //показать/скрыть форму добавления устройства
+  const toggleAddDevice = () => {
+    setShowAddDevice((prev) => !prev);
+  };
+  //удаление устройства
+  const deleteDevice = async (id) => {
+    try {
+      // Выполняем запрос DELETE на удаление устройства
+      await axios.delete(Api + `/device/${id}`);
 
+      // Обновляем состояние, убирая удаленное устройство из массива
+      setDevList((prevDevices) =>
+        prevDevices.filter((device) => device.id !== id)
+      );
+    } catch (error) {
+      console.error("Error deleting device:", error.message);
+      // Обработка ошибок удаления устройства
+    }
+  };
+
+  const appendDevice = async (newDevice) => {
+    try {
+      // Выполняем запрос POST на добавление устройства
+      await axios.post(Api + `/device`, newDevice);
+      // Обновляем состояние, добавляя  устройство в массив
+      setDevList([...devicesList, newDevice]);
+    } catch (error) {
+      console.error("Error adding device:", error.message);
+      // Обработка ошибок добавления устройства
+    }
+  };
   return (
     <div>
       <header className="header">
@@ -47,6 +78,8 @@ const Devices = () => {
           </div>
         </div>
       </header>
+      <div>{showAddDevice && <AddDevice appendDevice={appendDevice} />} </div>
+
       <div className="tablewrap">
         <table className="tablestyle">
           <thead>
@@ -58,10 +91,11 @@ const Devices = () => {
             </tr>
           </thead>
           <tbody>
-            <TableD devicesL={devicesList} />
+            <TableD devicesL={devicesList} deleteDeviceItem={deleteDevice} />
           </tbody>
         </table>
       </div>
+      <div className="add" onClick={toggleAddDevice}></div>
       <footer className="footer" style={{ marginTop: "220px" }}>
         <div className="container__footer-flex">
           <div className="container__logo-flex">

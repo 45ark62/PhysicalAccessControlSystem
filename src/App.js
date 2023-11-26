@@ -5,6 +5,8 @@ import Jurnal from "./Pages/Jurnal";
 import Devices from "./Pages/Devices";
 import ModalPerson from "./component/ModalPerson";
 import ModalDevice from "./component/ModalDevice";
+import PersonList from "./Pages/PersonList";
+import Statistics from "./Pages/Statistics";
 function App() {
   return (
     <>
@@ -14,6 +16,8 @@ function App() {
           <Route path="/home" element={<Home />} />
           <Route path="/jurnal" element={<Jurnal />} />
           <Route path="/devices" element={<Devices />} />
+          <Route path="/personlist" element={<PersonList />} />
+          <Route path="/statistics" element={<Statistics />} />
           <Route path={`/modalPerson/:id`} element={<ModalPerson />} />
           <Route path={`/modalDevice/:id`} element={<ModalDevice />} />
         </Routes>

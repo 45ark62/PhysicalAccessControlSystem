@@ -29,7 +29,21 @@ const main = () => {
           <div className={classes.container__grid_main}>
             <p className={classes.textinside}>
               <Link to={"/devices"} className={classes.textlink}>
-                Журнал устройств
+                Список устройств
+              </Link>
+            </p>
+          </div>
+          <div className={classes.container__grid_main}>
+            <p className={classes.textinside}>
+              <Link to={"/personlist"} className={classes.textlink}>
+                Список персон
+              </Link>
+            </p>
+          </div>
+          <div className={classes.container__grid_main}>
+            <p className={classes.textinside}>
+              <Link to={"/statistics"} className={classes.textlink}>
+                Статистика
               </Link>
             </p>
           </div>

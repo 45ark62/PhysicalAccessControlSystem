@@ -15,7 +15,7 @@ const Card = (props) => {
         style={{ textDecoration: "none" }}
         id={props.personId}
       >
-        <td className="tdstyle2">{props.personId}</td>
+        <td className="tdstyle2">{props.FIO}</td>
       </Link>
       <td className="tdstyle3">{props.deviceId}</td>
       <Link
